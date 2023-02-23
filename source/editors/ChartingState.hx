@@ -231,6 +231,8 @@ class ChartingState extends MusicBeatState
 			addSection();
 			PlayState.SONG = _song;
 		}
+		
+		shagVoice = PlayState.shaggyVoice;
 
 		// Paths.clearMemory();
 
@@ -1377,7 +1379,7 @@ class ChartingState extends MusicBeatState
 		}
 
 		var file:Dynamic = Paths.voices(currentSongName);
-		vocals = new FlxSound();
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, shagVoice ? "Shaggy" : ""));
 		if (Std.isOfType(file, Sound) || OpenFlAssets.exists(file)) {
 			vocals.loadEmbedded(file);
 			FlxG.sound.list.add(vocals);
