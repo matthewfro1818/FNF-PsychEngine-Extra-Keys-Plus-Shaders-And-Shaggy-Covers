@@ -152,6 +152,9 @@ class PlayState extends MusicBeatState
 
 	public var vocals:FlxSound;
 
+	public static var shaggyVoice:Bool = false;
+	var isShaggy:Bool = false;
+
 	public var dad:Character = null;
 	public var gf:Character = null;
 	public var boyfriend:Boyfriend = null;
@@ -1080,8 +1083,10 @@ class PlayState extends MusicBeatState
 
 		opponentStrums = new FlxTypedGroup<StrumNote>();
 		playerStrums = new FlxTypedGroup<StrumNote>();
-
-		// startCountdown();
+                
+	        shaggyVoice = isShaggy && ['warmup', 'house', 'insanity', 'polygonized', 'blocked', 'corn-theft', 'maze', 'splitathon', 'shredder', 'greetings', 'interdimensional', 'rano', 'bonus-song', 'bot-trot', 'escape-from-california', 'adventure', 'mealie', 'indignancy', 'memory', 'roofs', 'supernovae', 'glitch', 'master', 'cheating', 'unfairness', 'kabunga', 'recursed', 'exploitation', 'bonkers'].contains(SONG.song.toLowerCase());
+		
+	        // startCountdown();
 
 		generateSong(SONG.song);
 
