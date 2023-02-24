@@ -17,6 +17,8 @@ using StringTools;
 
 class CoolUtil
 {
+	public static var difficultyArray:Array<String> = new Array<String>();
+
 	public static var defaultDifficulties:Array<String> = [
 		'Easy',
 		'Normal',
