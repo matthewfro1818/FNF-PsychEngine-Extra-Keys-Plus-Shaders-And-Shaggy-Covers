@@ -296,8 +296,6 @@ class PlayState extends MusicBeatState
 	public var opponentCameraOffset:Array<Float> = null;
 	public var girlfriendCameraOffset:Array<Float> = null;
 
-	public static var shaggyVoice:Bool = false;
-
 	#if desktop
 	// Discord RPC variables
 	var storyDifficultyText:String = "";
