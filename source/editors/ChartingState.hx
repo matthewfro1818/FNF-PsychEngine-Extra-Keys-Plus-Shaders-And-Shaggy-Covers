@@ -118,6 +118,8 @@ class ChartingState extends MusicBeatState
 	var amountSteps:Int = 0;
 	var bullshitUI:FlxGroup;
 
+	var shagVoice:Bool;
+
 	var highlight:FlxSprite;
 
 	public static var GRID_SIZE:Int = 40;
@@ -1379,7 +1381,7 @@ class ChartingState extends MusicBeatState
 		}
 
 		var file:Dynamic = Paths.voices(currentSongName);
-		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, shagVoice ? "Shaggy" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(currentSongName, shagVoice ? "Shaggy" : ""));
 		if (Std.isOfType(file, Sound) || OpenFlAssets.exists(file)) {
 			vocals.loadEmbedded(file);
 			FlxG.sound.list.add(vocals);
