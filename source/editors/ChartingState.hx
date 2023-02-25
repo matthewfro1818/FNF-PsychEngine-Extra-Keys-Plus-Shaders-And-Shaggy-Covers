@@ -107,6 +107,8 @@ class ChartingState extends MusicBeatState
 	public static var curSec:Int = 0;
 	public static var lastSection:Int = 0;
 	private static var lastSong:String = '';
+        
+	var daSong:String;
 
 	var bpmTxt:FlxText;
 
@@ -1372,7 +1374,7 @@ class ChartingState extends MusicBeatState
 		UI_box.addGroup(tab_group_chart);
 	}
 
-	function loadSong(daSong:String):Void
+	function loadSong():Void
 	{
 		if (FlxG.sound.music != null)
 		{
