@@ -1380,8 +1380,7 @@ class ChartingState extends MusicBeatState
 			// vocals.stop();
 		}
 
-		var file:Dynamic = Paths.voices(currentSongName);
-		vocals = new FlxSound().loadEmbedded(Paths.voices(currentSongName, shagVoice ? "Shaggy" : ""));
+		var file:Dynamic = Paths.voices(currentSongName, shagVoice ? "Shaggy" : "");
 		if (Std.isOfType(file, Sound) || OpenFlAssets.exists(file)) {
 			vocals.loadEmbedded(file);
 			FlxG.sound.list.add(vocals);
