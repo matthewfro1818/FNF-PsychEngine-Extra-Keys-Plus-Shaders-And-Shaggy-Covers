@@ -1372,7 +1372,7 @@ class ChartingState extends MusicBeatState
 		UI_box.addGroup(tab_group_chart);
 	}
 
-	function loadSong():Void
+	function loadSong(daSong:String):Void
 	{
 		if (FlxG.sound.music != null)
 		{
@@ -1380,15 +1380,23 @@ class ChartingState extends MusicBeatState
 			// vocals.stop();
 		}
 
-		var file:Dynamic = Paths.voices(currentSongName, shagVoice ? "Shaggy" : "");
-		if (Std.isOfType(file, Sound) || OpenFlAssets.exists(file)) {
-			vocals.loadEmbedded(file);
-			FlxG.sound.list.add(vocals);
-		}
-		generateSong();
+		FlxG.sound.playMusic(Paths.inst(daSong), 0.6);
+
+		// WONT WORK FOR TUTORIAL OR TEST SONG!!! REDO LATER
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, shagVoice ? "Shaggy" : ""));
+		FlxG.sound.list.add(vocals);
+
 		FlxG.sound.music.pause();
-		Conductor.songPosition = sectionStartTime();
-		FlxG.sound.music.time = Conductor.songPosition;
+		vocals.pause();
+
+		FlxG.sound.music.onComplete = function()
+		{
+			vocals.pause();
+			vocals.time = 0;
+			FlxG.sound.music.pause();
+			FlxG.sound.music.time = 0;
+			changeSection();
+		};
 	}
 
 	function generateSong() {
