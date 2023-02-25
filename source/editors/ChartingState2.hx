@@ -1,4 +1,4 @@
-package;
+package editors;
 
 import openfl.system.System;
 import sys.io.File;
