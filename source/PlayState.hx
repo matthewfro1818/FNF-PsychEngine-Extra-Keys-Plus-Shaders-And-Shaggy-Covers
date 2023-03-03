@@ -344,8 +344,6 @@ class PlayState extends MusicBeatState
 		PauseSubState.songName = null; //Reset to default
 		playbackRate = ClientPrefs.getGameplaySetting('songspeed', 1);
 
-		keysArray = EKData.Keybinds.fill();
-
 
 		//Ratings
 		ratingsData.push(new Rating('sick')); //default rating
