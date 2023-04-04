@@ -47,7 +47,6 @@ class Song
 	public var player1:String = 'bf';
 	public var player2:String = 'dad';
 	public var gfVersion:String = 'gf';
-	var _file:FileReference;
 
 	public var playClaps:Bool = false;
 
