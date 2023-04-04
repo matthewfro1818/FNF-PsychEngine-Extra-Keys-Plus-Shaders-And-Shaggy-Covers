@@ -159,6 +159,8 @@ class ChartingState extends MusicBeatState
 	
 	var zoomTxt:FlxText;
 
+	var shagVoice:Bool;
+
 	var zoomList:Array<Float> = [
 		0.25,
 		0.5,
@@ -231,6 +233,8 @@ class ChartingState extends MusicBeatState
 			addSection();
 			PlayState.SONG = _song;
 		}
+
+		shagVoice = PlayState.shaggyVoice;
 
 		// Paths.clearMemory();
 
