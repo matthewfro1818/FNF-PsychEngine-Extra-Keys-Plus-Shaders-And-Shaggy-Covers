@@ -81,39 +81,6 @@ class EKData {
                 "anims" => ["LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT"],
                 "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT"], 
                 "pixelAnimIndex" => [0, 1, 2, 3, 9, 10, 13, 11, 12, 5, 6, 7, 8]
-            ],
-        13 => [
-                "letters" => ["A", "B", "C", "D", "J", "K", "E", "N", "L", "M", "F", "G", "H", "I"], 
-                "anims" => ["LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "UP", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT"],
-                "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT", "CIRCLE", "CIRCLE", "SPACE", "CIRCLE", "CIRCLE", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT"], 
-                "pixelAnimIndex" => [0, 1, 2, 3, 9, 10, 4, 13, 11, 12, 5, 6, 7, 8]
-            ],
-        14 => [
-                "letters" => ["A", "B", "C", "D", "J", "K", "E", "N", "E", "L", "M", "F", "G", "H", "I"], 
-                "anims" => ["LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "UP", "UP", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT"],
-                "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT", "CIRCLE", "CIRCLE", "SPACE", "CIRCLE", "SPACE", "CIRCLE", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT"], 
-                "pixelAnimIndex" => [0, 1, 2, 3, 9, 10, 4, 13, 4, 11, 12, 5, 6, 7, 8]
-            ],
-        15 => [
-                "letters" => ["A", "B", "C", "D", "J", "K", "L", "M", "O", "P", "Q", "R", "F", "G", "H", "I"], 
-                "anims" => ["LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT"],
-                "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT"], 
-                "pixelAnimIndex" => [0, 1, 2, 3, 9, 10, 11, 12, 14, 15, 16, 17, 5, 6, 7, 8]
-            ],
-        16 => [
-                "letters" => ["A", "B", "C", "D", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "F", "G", "H", "I"], 
-                "anims" => ["LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT", "LEFT", "DOWN", "UP", "RIGHT"],
-                "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT"], 
-                "pixelAnimIndex" => [0, 1, 2, 3, 9, 10, 11, 12, 13, 14, 15, 16, 17, 5, 6, 7, 8]
-        ],
-        17 => [
-                "letters" => ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-                'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'], 
-                "anims" => ["LEFT", "DOWN", "UP", "RIGHT", "UP", "LEFT", "DOWN", "UP", "RIGHT",
-                "LEFT", "DOWN", "UP", "RIGHT", "UP", "LEFT", "DOWN", "UP", "RIGHT"],
-                "strumAnims" => ["LEFT", "DOWN", "UP", "RIGHT", "SPACE", "LEFT", "DOWN", "UP", "RIGHT", 
-                "LEFT", "DOWN", "UP", "RIGHT", "CIRCLE", "LEFT", "DOWN", "UP", "RIGHT"], 
-                "pixelAnimIndex" => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
         ],
 	];
 
@@ -130,13 +97,7 @@ class EKData {
 		0.46, //9k
 		0.39, //10k
 		0.36, //11k
-		0.32, //12k
-		0.31, //13k
-		0.31, //14k
-		0.3, //15k
-        0.26, //16k
-        0.26, //17k
-        0.22 //18k
+		0.32 //12k
     ]; 
 	public static var lessX:Array<Int> = [
 		0, // 1k
@@ -150,13 +111,7 @@ class EKData {
 		8, //9k
 		7, //10k
 		6, //11k
-		6, //12k
-		8, //13k
-		7, //14k
-		6, //15k
-        7, //16k
-        6, // 17k
-        6 //18k
+		6 //12k
     ];
 
     public static var noteSep:Array<Int> = [
@@ -171,12 +126,7 @@ class EKData {
         3, //9k
         4, //10k
         4, //11k
-        5, //12k
-        6, //13k
-        6, //14k
-        7, //15k
-        6, //16k
-        5//18k
+        5 //12k
     ];
 
     public static var offsetX:Array<Float> = [
@@ -191,13 +141,7 @@ class EKData {
         0, //9k
         0, //10k
         0, //11k
-        0, //12k
-        0, //13k
-        0, //14k
-        0, //15k
-        0, //16k
-        0, //17k
-        0 //18k
+        0 //12k
     ];
 
     // i wont comment fuck you
@@ -213,13 +157,7 @@ class EKData {
         9, 
         10, 
         11, 
-        12, 
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
+        12
     ];
 
     public static var restPosition:Array<Float> = [
@@ -235,12 +173,6 @@ class EKData {
         40, //10k
         45, //11k
         30, //12k
-        30, //13k
-        29,// 14k
-        72, //15k
-        37, // 16k
-        61, //17k
-        16 //18k
     ];
 
     public static var gridSizes:Array<Int> = [
@@ -276,13 +208,7 @@ class EKData {
         0.6, //9k
         0.5, //10k
         0.4, //11k
-        0.3, //12k
-        0.3, //13k
-        0.3, //14k
-        0.2, //15k
-        0.18, //16k
-        0.18, //17k
-        0.15 //18k
+        0.3 //12k
     ];
 
     public static var pixelScales:Array<Float> = [
@@ -297,13 +223,7 @@ class EKData {
         0.7, //9k
         0.6, //10k
         0.55,//11k
-        0.5, //12k
-        0.48, //13k
-        0.48, //14k
-        0.42, //15k
-        0.38, //16k
-        0.38, //17k
-        0.32 //18k
+        0.5 //12k
     ];
 }
 
@@ -399,7 +319,7 @@ class Keybinds
             ['Up 2', 'note_elev10'],
             ['Right 3', 'note_elev11'],
             [''],
-            ['12 KEYS'],
+            ['12 KEYS FINAL'],
             ['Left 1', 'note_twel1'],
             ['Down 1', 'note_twel2'],
             ['Up 1', 'note_twel3'],
@@ -412,110 +332,6 @@ class Keybinds
             ['Down 3', 'note_twel10'],
             ['Up 3', 'note_twel11'],
             ['Right 3', 'note_twel12'],
-            [''],
-            ['13 KEYS'],
-            ['Left 1', 'note_thir1'],
-            ['Down 1', 'note_thir2'],
-            ['Up 1', 'note_thir3'],
-            ['Right 1', 'note_thir4'],
-            ['Left 2', 'note_thir5'],
-            ['Down 2', 'note_thir6'],
-            ['Center', 'note_thir7'],
-            ['Up 2', 'note_thir8'],
-            ['Right 2', 'note_thir9'],
-            ['Left 3', 'note_thir10'],
-            ['Down 3', 'note_thir11'],
-            ['Up 3', 'note_thir12'],
-            ['Right 3', 'note_thir13'],
-            ['14 KEYS'],
-            ['Left 1', 'note_fourt1'],
-            ['Down 1', 'note_fourt2'],
-            ['Up 1', 'note_fourt3'],
-            ['Right 1', 'note_fourt4'],
-            ['Left 2', 'note_fourt5'],
-            ['Down 2', 'note_fourt6'],
-            ['Center 1', 'note_fourt7'],
-            ['Center 2', 'note_fourt8'],
-            ['Up 2', 'note_fourt9'],
-            ['Right 2', 'note_fourt10'],
-            ['Left 3', 'note_fourt11'],
-            ['Down 3', 'note_fourt12'],
-            ['Up 3', 'note_fourt13'],
-            ['Right 3', 'note_fourt14'],
-            [''],
-            ['15 KEYS'],
-            ['Left 1', 'note_151'],
-            ['Down 1', 'note_152'],
-            ['Up 1', 'note_153'],
-            ['Right 1', 'note_154'],
-            ['Left 2', 'note_155'],
-            ['Down 2', 'note_156'],
-            ['Center 1', 'note_157'],
-            ['Center 2', 'note_158'],
-            ['Center 3', 'note_159'],
-            ['Up 2', 'note_1510'],
-            ['Right 2', 'note_1511'],
-            ['Left 3', 'note_1512'],
-            ['Down 3', 'note_1513'],
-            ['Up 3', 'note_1514'],
-            ['Right 3', 'note_1515'],
-            [''],
-            ['16 KEYS'],
-            ['Left 1', 'note_161'],
-            ['Down 1', 'note_162'],
-            ['Up 1', 'note_163'],
-            ['Right 1', 'note_164'],
-            ['Left 2', 'note_165'],
-            ['Down 2', 'note_166'],
-            ['Up 2', 'note_167'],
-            ['Right 2', 'note_168'],
-            ['Left 3', 'note_169'],
-            ['Down 3', 'note_1610'],
-            ['Up 3', 'note_1611'],
-            ['Right 3', 'note_1612'],
-            ['Left 4', 'note_1613'],
-            ['Down 4', 'note_1614'],
-            ['Up 4', 'note_1615'],
-            ['Right 4', 'note_1616'],
-            [''],
-            ['17 KEYS'],
-            ['Left 1', 'note_171'],
-            ['Down 1', 'note_172'],
-            ['Up 1', 'note_173'],
-            ['Right 1', 'note_174'],
-            ['Left 2', 'note_175'],
-            ['Down 2', 'note_176'],
-            ['Up 2', 'note_177'],
-            ['Right 2', 'note_178'],
-            ['Center', 'note_179'],
-            ['Left 3', 'note_1710'],
-            ['Down 3', 'note_1711'],
-            ['Up 3', 'note_1712'],
-            ['Right 3', 'note_1713'],
-            ['Left 4', 'note_1714'],
-            ['Down 4', 'note_1715'],
-            ['Up 4', 'note_1717'],
-            ['Right 4', 'note_1717'],
-            [''],
-            ['18 KEYS FINAL'],
-            ['Left 1', 'note_181'],
-            ['Down 1', 'note_182'],
-            ['Up 1', 'note_183'],
-            ['Right 1', 'note_184'],
-            ['Center 1', 'note_185'],
-            ['Left 2', 'note_186'],
-            ['Down 2', 'note_187'],
-            ['Up 2', 'note_188'],
-            ['Right 2', 'note_189'],
-            ['Left 3', 'note_1810'],
-            ['Down 3', 'note_1811'],
-            ['Up 3', 'note_1812'],
-            ['Right 3', 'note_1813'],
-            ['Center 2', 'note_1814'],
-            ['Left 4', 'note_1815'],
-            ['Down 4', 'note_1816'],
-            ['Up 4', 'note_1817'],
-            ['Right 4', 'note_1818'],
             [''],
             ['UI'],
             ['Left', 'ui_left'],
@@ -643,111 +459,6 @@ class Keybinds
 				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_twel10')),
 				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_twel11')),
                 ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_twel12'))
-            ],
-            [
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir1')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir2')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir3')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir4')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir5')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir6')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir7')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir8')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir9')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir10')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir11')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir12')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_thir13'))
-            ],
-            [
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt1')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt2')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt3')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt4')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt5')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt6')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt7')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt8')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt9')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt10')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt11')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt12')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt13')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_fourt14'))
-            ],
-            [
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_151')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_152')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_153')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_154')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_155')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_156')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_157')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_158')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_159')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1510')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1511')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1512')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1513')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1514')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1515'))
-            ],
-            [
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_161')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_162')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_163')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_164')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_165')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_166')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_167')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_168')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_169')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1610')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1611')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1612')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1613')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1614')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1615')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1616'))
-            ],
-            [
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_171')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_172')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_173')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_174')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_175')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_176')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_177')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_178')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_179')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1710')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1711')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1712')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1713')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1714')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1715')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1716')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1717'))
-            ],
-            [
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_181')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_182')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_183')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_184')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_185')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_186')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_187')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_188')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_189')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1810')),
-				ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1811')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1812')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1813')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1814')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1815')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1816')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1817')),
-                ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_1818'))
             ]
 		];
     }
