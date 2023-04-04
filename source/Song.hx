@@ -52,8 +52,6 @@ class Song
 
 	public var snap:Int = 1;
 
-	var UI_box:FlxUITabMenu;
-
 	/**
 	 * Array of notes showing when each section STARTS in STEPS
 	 * Usually rounded up??
