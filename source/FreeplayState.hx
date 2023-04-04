@@ -50,6 +50,75 @@ class FreeplayState extends MusicBeatState
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
+	private var Catagories:Array<String> = ['dave', 'joke', 'extras'];
+
+	private var CurrentPack:Int = 0;
+	private var NameAlpha:Alphabet;
+	private var NameAlpha:Alphabet;
+
+	var loadingPack:Bool = false;
+
+	var songColors:Array<FlxColor> = 
+	[
+    	0xFF00137F,    // GF but its actually dave!
+		0xFF4965FF,    // DAVE
+		0xFF00B515,    // MISTER BAMBI RETARD (thats kinda rude ngl)
+		0xFF00FFFF,    // SPLIT THE THONNNNN
+		0xFF800080,    // FESTIVAL
+		0xFF116E1C,    // MASTA BAMBI
+		0xFFFF0000,    // KABUNGA
+		0xFF0EAE2C,    // SECRET MOD LEAK
+		0xFFFF0000,    // TRISTAN
+		FlxColor.fromRGB(162, 150, 188), // PLAYROBOT
+		FlxColor.fromRGB(44, 44, 44),    // RECURSED
+		0xFF31323F,    // MOLDY
+		0xFF35396C,    // FIVE NIGHT
+		0xFF0162F5,    // OVERDRIVE
+		0xFF119A2B,    // CHEATING
+		0xFFFF0000,    // UNFAIRNESS
+		0xFF810000,    // EXPLOITATION
+    ];
+	public static var skipSelect:Array<String> = 
+	[
+		'five-nights',
+		'vs-dave-rap',
+		'vs-dave-rap-two'
+	];
+
+	public static var noExtraKeys:Array<String> = 
+	[
+		'five-nights',
+		'vs-dave-rap',
+		'vs-dave-rap-two',
+		'overdrive'
+	];
+
+	private var camFollow:FlxObject;
+	private static var prevCamFollow:FlxObject;
+
+	private var iconArray:Array<HealthIcon> = [];
+
+	var titles:Array<Alphabet> = [];
+	var icons:Array<FlxSprite> = [];
+
+	var doneCoolTrans:Bool = false;
+
+	var defColor:FlxColor;
+	var canInteract:Bool = true;
+
+	//recursed
+	var timeSincePress:Float;
+	var lastTimeSincePress:Float;
+
+	var pressSpeed:Float;
+	var pressSpeeds:Array<Float> = new Array<Float>();
+	var pressUnlockNumber:Int;
+	var requiredKey:Array<Int>;
+	var stringKey:String;
+
+	var characterSelectText:FlxText;
+	var showCharText:Bool = true;
+
 	override function create()
 	{
 		//Paths.clearStoredMemory();
@@ -204,6 +273,117 @@ class FreeplayState extends MusicBeatState
 		changeSelection(0, false);
 		persistentUpdate = true;
 		super.closeSubState();
+	}
+	public function LoadProperPack()
+	{
+		switch (Catagories[CurrentPack].toLowerCase())
+		{
+			case 'dave':
+				addWeek(['Warmup'], 0, ['dave']);
+				addWeek(['House', 'Insanity', 'Polygonized'], 1, ['dave', 'dave-annoyed', 'dave-angey']);
+				addWeek(['Blocked', 'Corn-Theft', 'Maze'], 2, ['bambi-new', 'bambi-new', 'bambi-new']);
+				addWeek(['Splitathon'], 3, ['the-duo']);
+				addWeek(['Shredder', 'Greetings', 'Interdimensional', 'Rano'], 4, ['bambi-new', 'tristan-festival', 'dave-festival-3d', 'dave-festival']);
+			case 'joke':
+				addWeek(['Supernovae', 'Glitch', 'Master'], 5, ['bambi-joke']);			
+				addWeek(['Cheating'], 14, ['bambi-3d']);
+			        addWeek(['Unfairness'], 15, ['bambi-unfair']);
+				addWeek(['Kabunga'], 6, ['exbungo']);
+				addWeek(['Roofs'], 7, ['baldi']);
+				addWeek(['Vs-Dave-Rap'], 1, ['dave-cool']);
+				addWeek(['Vs-Dave-Rap-Two'], 1, ['dave-cool']);
+			case 'extras':
+			        addWeek(['Bonus-Song'], 1, ['dave']);
+				addWeek(['Bot-Trot'], 9, ['playrobot']);
+				addWeek(['Escape-From-California'], 11, ['moldy']);
+				addWeek(['Five-Nights'], 12, ['dave']);
+				addWeek(['Adventure'], 8, ['tristan-opponent']);
+				addWeek(['Overdrive'], 13, ['dave-awesome']);
+				addWeek(['Mealie'], 2, ['bambi-loser']);
+				addWeek(['Indignancy'], 2, ['bambi-angey']);
+				addWeek(['Memory'], 1, ['dave']);
+				addWeek(['Recursed'], 10, ['recurser']);
+		}
+	}
+
+	var scoreBG:FlxSprite;
+
+	public function GoToActualFreeplay()
+	{
+		grpSongs = new FlxTypedGroup<Alphabet>();
+		add(grpSongs);
+
+		for (i in 0...songs.length)
+		{
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
+			songText.isMenuItem = true;
+			songText.itemType = 'Classic';
+			songText.targetY = i;
+			songText.scrollFactor.set();
+			songText.alpha = 0;
+			songText.y += 1000;
+			grpSongs.add(songText);
+
+			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+			icon.sprTracker = songText;
+			icon.scrollFactor.set();
+
+			iconArray.push(icon);
+			add(icon);
+		}
+
+		scoreText = new FlxText(FlxG.width * 0.7, 0, 0, "", 32);
+		scoreText.setFormat(Paths.font("comic.ttf"), 32, FlxColor.WHITE, LEFT);
+		scoreText.antialiasing = true;
+		scoreText.y = -225;
+		scoreText.scrollFactor.set();
+
+		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
+		scoreBG.alpha = 0.6;
+		scoreBG.scrollFactor.set();
+		add(scoreBG);
+
+		diffText = new FlxText(scoreText.x, scoreText.y + 15, 0, "", 24);
+		diffText.setFormat(Paths.font("comic.ttf"), 24, FlxColor.WHITE, LEFT);
+		diffText.antialiasing = true;
+		diffText.scrollFactor.set();
+
+		if (showCharText)
+		{
+			characterSelectText = new FlxText(FlxG.width, FlxG.height, 0, LanguageManager.getTextString("freeplay_skipChar"), 18);
+			characterSelectText.setFormat("Comic Sans MS Bold", 18, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			characterSelectText.borderSize = 1.5;
+			characterSelectText.antialiasing = true;
+			characterSelectText.scrollFactor.set();
+			characterSelectText.alpha = 0;
+			characterSelectText.x -= characterSelectText.textField.textWidth;
+			characterSelectText.y -= characterSelectText.textField.textHeight;
+			add(characterSelectText);
+
+			FlxTween.tween(characterSelectText,{alpha: 1}, 0.5, {ease: FlxEase.expoInOut});
+		}
+	
+		add(diffText);
+		add(scoreText);
+
+		FlxTween.tween(scoreBG,{y: 0},0.5,{ease: FlxEase.expoInOut});
+		FlxTween.tween(scoreText,{y: -5},0.5,{ease: FlxEase.expoInOut});
+		FlxTween.tween(diffText,{y: 30},0.5,{ease: FlxEase.expoInOut});
+		
+		for (song in 0...grpSongs.length)
+		{
+			grpSongs.members[song].unlockY = true;
+
+			// item.targetY = bullShit - curSelected;
+			FlxTween.tween(grpSongs.members[song], {y: song, alpha: song == curSelected ? 1 : 0.6}, 0.5, {ease: FlxEase.expoInOut, onComplete: function(twn:FlxTween)
+			{
+				grpSongs.members[song].unlockY = false;
+
+				canInteract = true;
+			}});
+		}
+
+		changeSelection();
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String, color:Int)
