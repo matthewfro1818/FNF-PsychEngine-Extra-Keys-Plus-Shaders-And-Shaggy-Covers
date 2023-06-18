@@ -63,7 +63,6 @@ class FreeplayState extends MusicBeatState
 	];
 
 	private var CurrentPack:Int = 0;
-	private var NameAlpha:Alphabet;
 
 	var loadingPack:Bool = false;
 
