@@ -102,6 +102,7 @@ class CharacterSelectState extends MusicBeatState
 		]),
 		new CharacterInSelect('bambi', [0, 0, 3, 0], [
 			new CharacterForm('bambi-new', 'Bambi', [0, 0, 3, 0]),
+			new CharacterForm('bambi-detected', 'Bambi Detected', [0, 0, 3, 0]),
 		]),
 		new CharacterInSelect('tristan', [2, 0.5, 0.5, 0.5], [
 			new CharacterForm('tristan', 'Tristan', [2, 0.5, 0.5, 0.5]),
@@ -111,6 +112,7 @@ class CharacterSelectState extends MusicBeatState
 		]),
 		new CharacterInSelect('dave-angey', [2, 2, 0.25, 0.25], [
 			new CharacterForm('dave-angey', '3D Dave', [2, 2, 0.25, 0.25], '3D')
+			new CharacterForm('dave_3d', '3D Dave 2.5', [2, 2, 0.25, 0.25], '3D')
 		]),
 		new CharacterInSelect('bambi-3d', [0, 3, 0, 0], [
 			new CharacterForm('bambi-3d', 'Expunged', [0, 3, 0, 0], '3D'),
