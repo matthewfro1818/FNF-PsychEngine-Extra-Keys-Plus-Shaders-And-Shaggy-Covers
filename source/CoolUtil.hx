@@ -18,15 +18,17 @@ using StringTools;
 class CoolUtil
 {
 	public static var difficultyArray:Array<String> = new Array<String>();
-
 	public static var defaultDifficulties:Array<String> = [
 		'Easy',
 		'Normal',
-		'Hard'
+		'Hard',
+		'Extrakeys'
 	];
 	public static var defaultDifficulty:String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
 
 	public static var difficulties:Array<String> = [];
+	public static var exploitationDifficulties:Array<String> = ["YOU'RE FUCKED", 'HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA', "YOU CAN'T ESCAPE FROM THE FUN ALREADY", 
+	"EXPUNGED'S REIGN IS HERE, YOU'RE FUCKED", "YOU HAVE REACHED THE END OF THE RABBIT HOLE", "YOU'RE WORTHLESS YOU'RE WORTHLESS YOU'RE WORTHLESS YOU'RE WORTHLESS YOU'RE WORTHLESS", ];
 
 	inline public static function quantize(f:Float, snap:Float){
 		// changed so this actually works lol
@@ -55,12 +57,16 @@ class CoolUtil
 	{
 		switch (PlayState.storyWeek)
 		{
+			case 3:
+				return 'FINALE';
+			case 16:
+				return exploitationDifficulties[new FlxRandom().int(0, exploitationDifficulties.length - 1)];
 			default:
 				if (PlayState.shaggyVoice && PlayState.storyDifficulty == 0) return 'Canon';
 				return difficultyArray[PlayState.storyDifficulty];
+
 		}
 	}
-
 
 	inline public static function boundTo(value:Float, min:Float, max:Float):Float {
 		return Math.max(min, Math.min(max, value));
