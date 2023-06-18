@@ -147,7 +147,6 @@ class FreeplayState extends MusicBeatState
 		'mastered',
 		'detected',
 		'cheating-not-cute'
-		'cheating-not-cute'
 	];
 
 	private var camFollow:FlxObject;
