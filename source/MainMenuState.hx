@@ -328,18 +328,11 @@ class MainMenuState extends MusicBeatState
 				changeItem();
 			}
 		}
-	FlxG.camera.follow(camFollowPos, null, 1);
+	        FlxG.camera.follow(camFollowPos, null, 1);
 		
 		if (FlxG.save.data.firstTimeUsing == null) {
 			FlxG.save.data.firstTimeUsing = true;
 		}
-
-		var texts:Array<String> = [
-			"Friday Night Funkin' v" + Application.current.meta.get('version'),
-			"${daRealEngineVer} Engine"
-			"v${engineVer}\nExtra Keys Addon v2.0.2" + 1.2,
-		];
-
 		for (i in 0...texts.length) {
 			var versionShit:FlxText = new FlxText(12, (FlxG.height - 24) - (18 * i), 0, texts[i], 12);
 			versionShit.scrollFactor.set();
