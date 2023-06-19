@@ -153,8 +153,6 @@ class FreeplayState extends MusicBeatState
 	private var camFollow:FlxObject;
 	private static var prevCamFollow:FlxObject;
 
-	private var iconArray:Array<HealthIcon> = [];
-
 	var titles:Array<Alphabet> = [];
 	var icons:Array<FlxSprite> = [];
 
