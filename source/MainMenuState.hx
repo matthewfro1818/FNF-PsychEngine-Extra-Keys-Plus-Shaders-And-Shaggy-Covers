@@ -582,17 +582,13 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 		}
-
-		super.update(elapsed);
-
 	}
+	if (FlxG.sound.music.volume < 0.8)
 	{
-		if (FlxG.sound.music.volume < 0.8)
-		{
-			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		}
-
-		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
+		FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
+	}
+	
+	var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
 		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
 		if (!selectedSomethin)
@@ -684,13 +680,14 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.screenCenter(X);
-		});
+		});	
+	        super.update(elapsed);
 	}
+
 
 	override function beatHit()
 	{
 		super.beatHit();
-	}
 	}
 
 	function changeItem(huh:Int = 0)
