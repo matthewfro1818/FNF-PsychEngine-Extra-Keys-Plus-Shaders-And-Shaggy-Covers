@@ -437,6 +437,21 @@ class FreeplayState extends MusicBeatState
 
 		}
 	}
+	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
+	{
+		if (songCharacters == null)
+			songCharacters = ['bf'];
+
+		var num:Int = 0;
+
+		for (song in songs)
+		{
+			addSong(song, weekNum, songCharacters[num]);
+
+			if (songCharacters.length != 1)
+				num++;
+		}
+	}
 
 	public function GoToActualFreeplay()
 	{
@@ -543,7 +558,7 @@ class FreeplayState extends MusicBeatState
 	}*/
 
 	var instPlaying:Int = -1;
-	private static var vocals:FlxSound = null;
+	public static var vocals:FlxSound = null;
 	var holdTime:Float = 0;
 	override function update(elapsed:Float)
 	{
