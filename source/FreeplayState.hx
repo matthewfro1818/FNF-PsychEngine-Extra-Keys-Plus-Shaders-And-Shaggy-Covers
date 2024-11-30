@@ -438,8 +438,6 @@ class FreeplayState extends MusicBeatState
 		}
 	}
 
-	var scoreBG:FlxSprite;
-
 	public function GoToActualFreeplay()
 	{
 		grpSongs = new FlxTypedGroup<Alphabet>();
